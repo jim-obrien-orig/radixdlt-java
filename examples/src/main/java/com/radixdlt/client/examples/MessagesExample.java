@@ -8,10 +8,13 @@ import com.radixdlt.client.atommodel.accounts.RadixAddress;
 import com.radixdlt.client.core.Bootstrap;
 import org.radix.utils.RadixConstants;
 
+
 public class MessagesExample {
 	public static void main(String[] args) {
 		// Create a new public key identity
 		final RadixIdentity radixIdentity = RadixIdentities.createNew();
+
+		System.out.println("Public key: " + radixIdentity.getPublicKey());
 
 		// Initialize api layer
 		RadixApplicationAPI api = RadixApplicationAPI.create(Bootstrap.LOCALHOST, radixIdentity);
@@ -21,6 +24,7 @@ public class MessagesExample {
 
 		System.out.println("My address: " + api.getAddress());
 		System.out.println("My public key: " + api.getPublicKey());
+
 
 		// Print out all past and future messages
 		api.observeMessages().subscribe(System.out::println);

@@ -23,3 +23,14 @@ shadowJar {
         exclude(dependency('org.bouncycastle:bcprov-jdk15on'))
     }
 }
+
+
+task(runMessagesExample, dependsOn: 'classes', type: JavaExec) {
+    main = 'com.radixdlt.client.examples.MessagesExample'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task(runTokensExample, dependsOn: 'classes', type: JavaExec) {
+    main = 'com.radixdlt.client.examples.TokensExample'
+    classpath = sourceSets.main.runtimeClasspath
+}

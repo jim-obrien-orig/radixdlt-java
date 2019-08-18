@@ -5,6 +5,7 @@ apply plugin: 'checkstyle'
 apply plugin: 'org.sonarqube'
 apply plugin: 'project-report'
 apply plugin: 'com.adarshr.test-logger'
+apply plugin: 'java'
 
 repositories {
     jcenter()
@@ -112,3 +113,5 @@ install {
     }
   }
 }
+
+
